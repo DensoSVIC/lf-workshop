@@ -1,0 +1,18 @@
+image:
+  file: Dockerfile
+  context: ./src-gen/HelloWorld
+
+tasks:
+  - init: |
+      chmod a+w /var/run/docker.sock && 
+      make build-linux
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: false
+    addBadge: true
