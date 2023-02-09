@@ -1,0 +1,13 @@
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: false
+    addComment: false
+    addBadge: true
+    
+image:
+  file: Dockerfile
+  context: ./src-gen/HelloWorld

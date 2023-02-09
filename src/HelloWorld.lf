@@ -1,0 +1,11 @@
+target C {
+    timeout: 10 sec,
+    docker: true
+};
+
+main reactor{
+    timer t(1 sec, 1 sec);
+    reaction(t){=
+        printf("Hello World\n");
+    =}
+}
