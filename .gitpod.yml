@@ -1,2 +1,8 @@
+#tasks:
+#  - name: Setup & Build
+#    before: yarn global add express
+#    init: yarn install
+#    command: bash ./.scripts/setup.bash nightly
+
 image:
   file: .gitpod.Dockerfile
