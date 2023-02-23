@@ -1,7 +1,7 @@
 target C {
     timeout: 10 secs,
     coordination: decentralized,
-    docker: true
+    docker: false
 };
 
 /**
