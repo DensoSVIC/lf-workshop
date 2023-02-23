@@ -12,6 +12,14 @@ COPY .scripts .scripts
 RUN bash ./.scripts/setup.bash nightly
 ENV PATH="$PATH:/lingua-franca/bin"
 
+# To install RTI at /usr/local/bin/RTI
+RUN git clone https://github.com/lf-lang/reactor-c.git && \
+cd reactor-c/core/federated/RTI/ && \
+mkdir build && cd build && \
+cmake ../ && \
+make && \
+sudo make install
+
 # Create the gitpod user. UID must be 33333.
 RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
 USER gitpod
