@@ -2,3 +2,7 @@ bin/
 .DS_Store
 src-gen/*
 fed-gen/*
+build/
+include/
+lib/
+share/
