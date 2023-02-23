@@ -1,0 +1,25 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+      "cpus": 1
+    },
+    "waitFor": "postCreateCommand",
+    "updateContentCommand": "",
+    "postCreateCommand": "bash ./.scripts/setup.bash nightly",
+    "workspaceFolder": "/workspaces/lingua-franca-workshop",
+    "remoteEnv": {
+        // Unsure if this is a good idea, as other people might fork this and change name
+        "LF_PATH": "${containerWorkspaceFolder}/lingua-franca",
+        "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/lingua-franca/bin"
+    },
+    "customizations": {
+      "codespaces": {
+        "openFiles": []
+      },
+      "vscode": {
+        "extensions": [
+          "lf-lang.vscode-lingua-franca"
+        ]
+      }
+    }
+  }

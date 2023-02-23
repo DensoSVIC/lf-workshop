@@ -1,6 +1,5 @@
 target C {
-    timeout: 100 sec,
-    docker: true
+    timeout: 100 sec
 };
 
 main reactor{
