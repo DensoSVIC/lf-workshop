@@ -1,6 +1,7 @@
 {
     "name": "ubuntu for lf-workshop",
     "build": { "dockerfile": "Dockerfile" },
+    "workspaceFolder": "/workspaces/lf-workshop",
     "customizations": {
       "codespaces": {
         "openFiles": []

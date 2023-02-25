@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install -yq \
     openjdk-17-jdk \
     npm \
     lsb-core
-RUN mkdir scripts
+RUN mkdir .scripts
 COPY ../../.scripts .scripts
 
-RUN bash ../../.scripts/setup.bash nightly
+RUN bash ./.scripts/setup.bash nightly
 ENV PATH="$PATH:/lingua-franca/bin"
 
 # To install RTI at /usr/local/bin/RTI
