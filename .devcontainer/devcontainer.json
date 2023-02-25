@@ -6,7 +6,7 @@
     "waitFor": "postCreateCommand",
     "updateContentCommand": "",
     "postCreateCommand": "bash ./.scripts/setup.bash nightly",
-    "workspaceFolder": "/workspaces/",
+    "workspaceFolder": "/workspaces/lf-workshop",
     "remoteEnv": {
         // Unsure if this is a good idea, as other people might fork this and change name
         "LF_PATH": "${containerWorkspaceFolder}/lingua-franca",

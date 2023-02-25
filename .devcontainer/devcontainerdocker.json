@@ -1,0 +1,14 @@
+{
+    "name": "ubuntu for lf-workshop",
+    "build": { "dockerfile": "Dockerfile" },
+    "customizations": {
+      "codespaces": {
+        "openFiles": []
+      },
+      "vscode": {
+        "extensions": [
+          "lf-lang.vscode-lingua-franca"
+        ]
+      }
+    }
+  }
