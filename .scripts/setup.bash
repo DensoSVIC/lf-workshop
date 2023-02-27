@@ -29,6 +29,7 @@ fi
 sudo apt install --assume-yes python3 python3-dev python3-pip
 python3 -m pip install --exists-action i setuptools requests
 pip3 install LinguaFrancaBase
+python3 -m pip install pylint --upgrade
 ## Setup Typescript
 npm install -g typescript
 ## Setup Rust
