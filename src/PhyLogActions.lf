@@ -1,0 +1,42 @@
+target C {
+    timeout: 10 sec,
+    keepalive: true
+};
+
+reactor actions {
+    input x: int;
+    logical action l;
+    physical action p;
+
+    reaction(x) -> l, p {= 
+        lf_schedule(l, MSEC(200)); //schedules at fixed logical time interval of 200 msec in future
+        lf_schedule(p, MSEC(200)); //schedules at logical times determined by the local physical clock
+    =}
+
+    reaction(l) {= 
+        interval_t elapsed_time = lf_time_logical_elapsed();
+        printf("Logical action triggered at logical time %lld nsec after start.\n", elapsed_time);
+        if (elapsed_time != 200000000LL) {
+            printf("Expected logical action time to be 200 msec. It was %lld nsec.\n", elapsed_time);
+            exit(1);
+        }
+    =}
+
+    reaction(p){=
+        interval_t elapsed_time = lf_time_logical_elapsed();
+        printf("Physical triggered at logical time %lld nsec after start.\n", elapsed_time);
+        if (elapsed_time != 200000000LL) {
+            printf("Expected physical action time to be 200 msec. It was %lld nsec.\n", elapsed_time);
+            exit(1);
+        }
+    =}
+}
+
+main reactor{
+    timer t;
+    a = new actions();
+
+    reaction(t) -> a.x{=
+        lf_set(a.x, 1);
+    =}
+}

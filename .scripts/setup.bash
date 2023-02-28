@@ -71,6 +71,16 @@ case "$RELEASE_BUILD" in
         # Here, we ignore the actual build name (the original name of the file and the original first directory). 
         tar -xf lf.tar.gz -C lingua-franca --strip-components 1
         rm lf.tar.gz
+        cd ..
+
+        #Install RTI
+        git clone https://github.com/lf-lang/reactor-c.git && \
+        cd reactor-c/core/federated/RTI/ && \
+        mkdir build && cd build && \
+        cmake ../ && \
+        make && \
+        sudo make install
+        cd ..
     ;;
 esac
 
