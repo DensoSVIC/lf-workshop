@@ -31,12 +31,56 @@ If you are not comfortable with the above environments, please follow the links 
 -->
 Your environment can take up to a few minutes to build the container image and load the editor. Once you pass this step, you are ready for the LF programming experience!
 
-## Getting started with the examples
-Make sure you have the compiler built in the previous step by bringing up the terminal in the editor and typing in `lfc`. By default, the terminal points to 'lf-workshop' directory. To run an example, use the command `lfc src/<example>.lf` to build and run the generated binary `bin/example`.
-Example: lfc src/HelloWorld.lf
-
+## Getting started with the exercises
+Make sure you have the compiler built in the previous step by bringing up the terminal in the editor and typing in `lfc`. By default, the terminal points to 'lf-workshop' directory. To run an example, use the command `lfc src/<example>.lf` to build and run the generated binary `bin/<example>`.
+```
+$lfc src/HelloWorld.lf
+$bin/HelloWorld
+```
 
 You can also use the features of the in-built editor by pressing `ctrl+shift+p` and selecting `Lingua Franca: Build and Run` option which builds and runs the program for you. To render the diagram view of your Lingua Franca code, click the ![diagram-image](icons/diagram-icon.png "Keiler Diagram") icon on the top right corner of the editor window in which the `.lf` program is opened.
+
+## Tutorial
+### Exercise 1
+*Running a simplest LF application to familiarize with concepts of the meta language*
+
+1. Open `src/HelloLF.lf` in editor.
+- Go through the syntax and key words
+- Diagrammatic view of the LF program
+- Observe generated code and compare with equivalent non-LF code
+- Polyglot test in CPP/Python
+2. Trigger reaction with periodic timer
+3. Print logical and physical time at each trigger
+4. Explore target properties (eg: `timeout`)
+5. Include preamble code
+6. State variables
+
+### Exercise 2 
+*Building composite reactors*
+1. Open `src/Imports.lf` in editor.
+2. Multiple reactors
+3. Import mechanism
+4. Modal models
+5. Banks of reactors
+
+### Exercise 3
+*Understanding LF time syntax*
+1. Open `src/PhyLogTimes.lf` in editor.
+- Understand that logical time advances only on an event while physical time advances irrespective
+2. Deadline handling mechanism
+3. Logical and physical actions
+4. Physical connection
+
+### Exercise 4
+*Developing distributed applications*
+1. Open `src/HelloWorldFederated.lf` in editor.
+2. Explore centralized vs distributed coordination
+3. Containerized execution
+
+### Exercise 5
+*A real life application - door lock example*
+1. Open `src/DoorLock/DoorLock.lf` in editor.
+2. Detect cases of non-determinism
 
 ## Before you leave
 When you are done with the workshop, cleanup unused/stopped instances you may have created during the event to avoid being billed.

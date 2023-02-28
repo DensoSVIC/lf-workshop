@@ -2,9 +2,17 @@ target C {
     timeout: 100 sec
 };
 
+preamble{=
+    int twice(int i){
+        return i*2;
+    }
+=}
 main reactor{
     timer t(1 sec, 1 sec);
+    state count:int(0);
     reaction(t){=
-        printf("Hello World\n");
+        int num = 2;
+        printf("Hello World %d\n", twice(self->count));
+        self->count++;
     =}
 }
