@@ -5,7 +5,7 @@
     },
     "waitFor": "postCreateCommand",
     "updateContentCommand": "",
-    "postCreateCommand": "bash ./.scripts/setup.bash nightly --no-example",
+    "postCreateCommand": "bash ./.scripts/setup.bash dev --no-example",
     "workspaceFolder": "/workspaces/lf-workshop",
     "remoteEnv": {
         // Unsure if this is a good idea, as other people might fork this and change name
