@@ -1,5 +1,5 @@
 # Lingua Franca Workshop
-The objective of this workshop is to get familiar with basic features of Lingua Franca. We will ll go a step further to discuss how it can be applied for the development of time critical software applications. 
+The objective of this workshop is to get familiar with basic features of Lingua Franca. We will go a step further to discuss how it can be applied for the development of time critical software applications. 
 
 We recommend visiting the [Lingua Franca](https://www.lf-lang.org/) project page for more details.
 
@@ -39,7 +39,7 @@ Example: lfc src/HelloWorld.lf
 You can also use the features of the in-built editor by pressing `ctrl+shift+p` and selecting `Lingua Franca: Build and Run` option which builds and runs the program for you. To render the diagram view of your Lingua Franca code, click the ![diagram-image](icons/diagram-icon.png "Keiler Diagram") icon on the top right corner of the editor window in which the `.lf` program is opened.
 
 ## Before you leave
-When you are done with the workshop, cleanup your unused/stopped instances you may have created during the event to avoid being billed.
+When you are done with the workshop, cleanup unused/stopped instances you may have created during the event to avoid being billed.
 * [on Github](https://github.com/codespaces/)
 * [On Gitpod](https://gitpod.io/workspaces)
 
