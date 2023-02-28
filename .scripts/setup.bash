@@ -64,7 +64,7 @@ case "$RELEASE_BUILD" in
     ;;
     *) 
         pip install requests
-        ./.scripts/get-lf-executable $RELEASE_BUILD
+        #./.scripts/get-lf-executable $RELEASE_BUILD
         #mkdir lingua-franca-executable
         # While what we have here is tar.gz, lf release bot appear to have a bug and did not gunzip it.
         # Therefore `tar -xzf` will fail but `tar -xf` will work.
