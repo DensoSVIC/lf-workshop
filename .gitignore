@@ -3,6 +3,7 @@ bin/
 src-gen/*
 fed-gen/*
 build/
-include/
-lib/
+include
+lib
 share/
+lingua-franca/

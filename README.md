@@ -47,8 +47,8 @@ You can also use the features of the in-built editor by pressing `ctrl+shift+p` 
 1. Open `src/HelloLF.lf` in editor.
 - Go through the syntax and key words
 - Diagrammatic view of the LF program
-- Observe generated code and compare with equivalent non-LF code
-- Polyglot test in CPP/Python
+- Observe generated code and compare with equivalent non-LF code (`artifacts/HelloWorld.c`)
+- Polyglot test in CPP/Python (`src/HelloLFPy.lf` and `src/HelloLFCpp.lf`)
 2. Trigger reaction with periodic timer
 3. Print logical and physical time at each trigger
 4. Explore target properties (eg: `timeout`)
