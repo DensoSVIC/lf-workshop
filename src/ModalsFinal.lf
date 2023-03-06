@@ -1,0 +1,45 @@
+/** Modal Reactors **/
+target C {
+    fast: false,
+    timeout: 10 sec
+}
+
+reactor Modes {
+    output mode_num: int
+    timer t(1 sec, 1 sec);
+
+    initial mode One {
+        state counter1: int(0)
+        reaction(reset) {= self->counter1 = 0; =}
+
+        reaction(t) -> mode_num, Two{=
+            lf_set(mode_num, 1);
+            printf("Current mode: %d count:%d\n", mode_num->value, self->counter1++);
+            lf_set_mode(Two);
+
+            //lf_set(count1, self->counter1++);
+        =}
+    }
+
+    mode Two {
+        reaction(t) -> mode_num, Three{=
+            lf_set(mode_num, 2);
+            printf("Current mode: %d\n", mode_num->value);
+            lf_set_mode(Three);
+        =}
+    }
+
+    // history and reset
+    mode Three {
+        reaction(t) -> mode_num, history(One){=
+            lf_set(mode_num, 3);
+            printf("Current mode: %d\n", mode_num->value);
+            printf("Transitioning to mode One (continue)\n");
+            lf_set_mode(One);
+        =}
+    }
+}
+
+main reactor {
+    modes = new Modes()
+}

@@ -1,0 +1,29 @@
+target C {
+    timeout: 100 sec //Step 4
+};
+
+//Step 5
+preamble{=
+    int twice(int i){
+        return i*2;
+    }
+=}
+main reactor{
+    //Step 2
+    timer t(1 sec, 1 sec);
+    
+    //Step 6
+    state count:int(0);
+     
+    reaction(t){=
+        int num = 2;
+        printf("Hello World %d\n", twice(self->count));
+        self->count++;
+
+        //Step 3
+        instant_t le = lf_time_logical_elapsed();
+        instant_t pe = lf_time_physical_elapsed();
+        time_t delta = pe-le; 
+        printf("Current logical: %lld \t physical: %lld  delta: %ld nsecs\n", le, pe, delta);
+    =}
+}

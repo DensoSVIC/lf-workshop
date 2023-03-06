@@ -1,0 +1,6 @@
+target python;
+main reactor {
+    reaction(startup) {=
+        print("Hello LF (in Python).\n");
+    =}
+}

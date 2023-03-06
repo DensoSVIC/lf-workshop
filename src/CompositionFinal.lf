@@ -1,0 +1,44 @@
+target C {
+    timeout: 10s
+}
+reactor Source {
+    timer t(0, 100 ms)
+    output out:int
+    state count:int(0)
+    reaction(t) -> out {=
+        (self->count)++;
+        lf_set(out, self->count);
+    =}
+}
+reactor Sink {
+    input in:int
+    state count:int(0)
+
+    reaction(in) {=
+        (self->count)++;
+        printf("Received %d\n", in->value);
+        if (in->value != self->count) {
+            fprintf(stderr, "FAILURE: Expected %d\n", self->count);
+            exit(1);
+        }
+    =}
+}
+
+// Step2: Add a third reactor
+//        Parametrize the reactors
+reactor Pass {
+    input x: int
+    output y: int
+
+    reaction(x) -> y {= lf_set(y, x->value); =}
+}
+
+
+// Step3: Move this to new reactor to a file to show imports
+// Step4: Banks of reactors
+
+main reactor {
+    s1 = new[3] Source()
+    s2 = new[3] Sink()
+    s1.out -> s2.in
+}

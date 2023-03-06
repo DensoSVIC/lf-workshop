@@ -1,0 +1,30 @@
+/** Modal Reactors **/
+target C {
+    fast: false,
+    timeout: 5 sec
+}
+
+reactor Modes {
+    output mode_num: int
+    timer t(1 sec, 1 sec);
+
+    initial mode One {
+        reaction(t) -> mode_num, Two{=
+            lf_set(mode_num, 1);
+            printf("Current mode %d\n", mode_num->value);
+            lf_set_mode(Two);
+        =}
+    }
+
+    mode Two {
+        reaction(t) -> mode_num, One{=
+            lf_set(mode_num, 2);
+            printf("Current mode %d\n", mode_num->value);
+            lf_set_mode(One);
+        =}
+    }
+}
+
+main reactor {
+    modes = new Modes()
+}

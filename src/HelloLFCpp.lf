@@ -1,0 +1,6 @@
+target CPP;
+main reactor {
+    reaction(startup) {=
+        std::cout << "Hello LF (in CPP)."<< std::endl;
+    =}
+}

@@ -1,0 +1,32 @@
+target C {
+    timeout: 10s
+}
+
+reactor Source {
+    timer t(0, 100 ms)
+    output out:int
+    state count:int(0)
+    reaction(t) -> out {=
+        (self->count)++;
+        lf_set(out, self->count);
+    =}
+}
+reactor Sink {
+    input in:int
+    state count:int(0)
+
+    reaction(in) {=
+        (self->count)++;
+        printf("Received %d\n", in->value);
+        if (in->value != self->count) {
+            fprintf(stderr, "FAILURE: Expected %d\n", self->count);
+            exit(1);
+        }
+    =}
+}
+
+main reactor {
+    s1 = new Source()
+    s2 = new Sink()
+    s1.out -> s2.in
+}

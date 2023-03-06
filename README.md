@@ -57,19 +57,22 @@ You can also use the features of the in-built editor by pressing `ctrl+shift+p` 
 
 ### Exercise 2 
 *Building composite reactors*
-1. Open `src/Imports.lf` in editor.
+1. Open `src/Composition.lf` in editor.
 2. Multiple reactors
 3. Import mechanism
-4. Modal models
-5. Banks of reactors
+4. Banks of reactors
+5. A note on Determinism using `src/Determinism.lf`
+5. Open `src/Modal.lf` for Modal models 
+6. Add a third mode with 
 
 ### Exercise 3
 *Understanding LF time syntax*
 1. Open `src/PhyLogTimes.lf` in editor.
 - Understand that logical time advances only on an event while physical time advances irrespective
-2. Deadline handling mechanism
-3. Logical and physical actions
-4. Physical connection
+2. Open `src/Logical.lf` in editor and observe multisource pattern.
+3. Deadline handling mechanism using `src/Deadline.lf`
+4. Logical and physical actions (Optional)
+5. Physical connection (Optional)
 
 ### Exercise 4
 *Developing distributed applications*
