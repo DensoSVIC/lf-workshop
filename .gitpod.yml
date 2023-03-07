@@ -10,3 +10,4 @@ image:
 vscode:
   extensions:
     - lf-lang.vscode-lingua-franca
+    - kieler.klighd-vscode
