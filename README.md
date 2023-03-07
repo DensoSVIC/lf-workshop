@@ -70,7 +70,7 @@ You can also use the features of the in-built editor by pressing `ctrl+shift+p` 
 1. Open `src/PhyLogTimes.lf` in editor.
 - Understand that logical time advances only on an event while physical time advances irrespective
 2. Open `src/Logical.lf` in editor and observe multisource pattern.
-3. Deadline handling mechanism using `src/Deadline.lf`
+3. Deadline handling mechanism using `src/SimpleDeadline.lf`
 4. Logical and physical actions (Optional)
 5. Physical connection (Optional)
 

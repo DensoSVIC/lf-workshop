@@ -41,7 +41,7 @@ target C {
  *
  * @input message The message.
  */
-reactor PrintMessage(delay:time(10 ns)) {
+reactor PrintMessage(delay:time(100 ms)) {
     input message:char*;
     timer t(1 sec, 1 sec);
     reaction(message) {=
