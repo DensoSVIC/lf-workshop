@@ -1,7 +1,7 @@
 target C {
     timeout: 10 secs,
     coordination: decentralized,
-    docker: false
+    docker: true
 };
 
 /**
@@ -29,8 +29,9 @@ target C {
         snprintf(message->value, length, "%s %d", self->prefix, self->count++);
 
         tag_t tag = lf_tag();
+
         lf_print("At (elapsed) logical tag (%lld, %u), source sends message: %s",
-            tag.time - start_time, tag.microstep,
+            tag.time - lf_time_start(), tag.microstep,
             message->value
         );
     =}
@@ -47,7 +48,7 @@ reactor PrintMessage(delay:time(100 ms)) {
     reaction(message) {=
         tag_t tag = lf_tag();
         lf_print("At (elapsed) logical tag (%lld, %u), print receives: %s",
-            tag.time - start_time, tag.microstep,
+            tag.time - lf_time_start(), tag.microstep,
             message->value
         );
     =}STP(delay){= //Est. Latency
@@ -57,7 +58,7 @@ reactor PrintMessage(delay:time(100 ms)) {
     =}
 }
 
-federated reactor {
+federated reactor at rti{
     source = new MessageGenerator(prefix = "Hello World");
     print = new PrintMessage();
     source.message -> print.message;

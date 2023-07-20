@@ -1,9 +1,12 @@
 target C {
-    timeout: 100 sec //Step 4
+    timeout: 100 sec, //Step 4
+    docker: true
 };
 
 //Step 5
 preamble{=
+    #include <time.h>
+
     int twice(int i){
         return i*2;
     }

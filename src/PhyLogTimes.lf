@@ -2,6 +2,10 @@ target C {
     timeout: 10 sec
 };
 
+preamble {=
+    #include <time.h>
+=}
+
 main reactor{
     timer t(0 sec, 10 msec);
     reaction(startup){=

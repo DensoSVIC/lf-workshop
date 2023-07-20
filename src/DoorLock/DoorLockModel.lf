@@ -16,6 +16,7 @@
 
 target CCpp {
     keepalive: true,
+    files: ["include/types.h"]
 }
 import UserInteraction from "lib/UserInteraction.lf"
 import PropagationDelaySim from "lib/PropagationDelaySim.lf"
